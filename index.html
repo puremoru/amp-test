@@ -1,0 +1,122 @@
+<!--
+  ## Introduction
+
+  Learn how to create your first AMP Story. The [`amp-story`](/content/amp-dev/documentation/components/reference/amp-story-v1.0.md) extension provides a new format for displaying visual content.
+-->
+<!-- -->
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- ## Setup -->
+    <!-- AMP Stories are written using AMPHTML and they use their own AMP extension: `amp-story`. The first step is to import the `amp-story` in the header. -->
+    <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+    <!-- AMP Stories can make use of other AMP extensions such as `amp-video`. However, AMP Stories support only a subset of the available AMP extensions. You can find a full list of the supported extensions [here](/content/amp-dev/documentation/components/reference/amp-story.md#children-of-amp-story-grid-layer). -->
+    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+    <title>Stories in AMP - Hello World</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link rel="canonical" href="https://amp.dev/documentation/examples/introduction/stories_in_amp/index.html">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <!-- Stories can be styled using CSS: -->
+    <style amp-custom>
+      amp-story {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI ", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji ", "Segoe UI Emoji ", "Segoe UI Symbol ";
+      }
+      amp-story-page * {
+        color: white;
+        text-align: center;
+      }
+      [template=thirds] {
+        padding: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ## Writing the Story -->
+    <!-- Stories are declared inside the `amp-story` tag. Story-level metadata is provided via attributes. (The first four attributes are mandatory; the final two are optional, but recommended.) Note that this metadata augments, but does not replace, [Structured Data](https://developers.google.com/search/docs/data-types/article#amp). -->
+    <amp-story standalone
+      title="Stories in AMP - Hello World"
+      publisher="AMP Project"
+      publisher-logo-src="https://amp.dev/favicons/coast-228x228.png"
+      poster-portrait-src="https://amp.dev/static/samples/img/story_dog2_portrait.jpg"
+      poster-square-src="https://amp.dev/static/samples/img/story_dog2_square.jpg"
+      poster-landscape-src="https://amp.dev/static/samples/img/story_dog2_landscape.jpg">
+
+      <!-- A story consists of one or more pages. Each page is declared by an `amp-story-page` element. Pages are designed by layering videos, images and text. Here we have a page that uses two layers. One layer filling the available space with an image and one text layer that shows a heading. -->
+      <amp-story-page id="page-1">
+        <amp-story-grid-layer template="fill">
+          <amp-img src="https://japan.cnet.com/storage/2018/01/09/f4973bcfc8c0a5a8f45f01fc8c68832f/img_01.jpg"
+                   width="720" height="1280"
+                   layout="responsive">
+          </amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical">
+          <h1>ゑびやへようこそ！</h1>
+          <p>本日はゑびやへお越しいただきまして誠にありがとうございます。</p>
+          <p>ゑびやや伊勢神宮周辺についての情報をまとめたものとなっていますので、待ち時間や伊勢観光の予定を決める際などにお使いください。</p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <amp-story-page id="page-2">
+        <amp-story-grid-layer template="fill">
+          <amp-img src="http://www.ise-ebiya.com/assets/images/daisyokudo_main_01.jpg"
+                   width="720" height="1280"
+                   layout="responsive">
+          </amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical">
+          <h1>食材へのこだわり</h1>
+          <p>美し國 三重で育まれる極上の海の幸 山の幸。ゑびやでは、食材の<b>約90%</b>は三重県産のものを使用しております。</p>
+          <p>地元で獲れた魚介類をナノアイスに漬け輸送し、氷感庫で保存することで新鮮な魚をご提供しております。</p>
+          <p>最高級の松阪牛、伊勢海老、あわびなど贅を尽くした食材で、〜おかわりしたくなる 伊勢の國のおもてなし〜を是非当店でご堪能くださいませ。</p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <amp-story-page id="page-3">
+        <amp-story-grid-layer template="fill">
+          <amp-img src="http://www.ise-ebiya.com/assets/images/menu_01_01.jpg"
+                   width="720" height="1280"
+                   layout="responsive">
+          </amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical">
+          <h1>お伊勢さんのご馳走定食</h1><span>税別3,780円</span>
+          <p>伊勢の國の、極上の美味を集めた、ゑびや自慢のご馳走定食。松阪牛のローストビーフに、新鮮なお造り、そして伊勢の郷土料理てこねずし。美しうま國三重の地の物を中心に使用した極上の素材で織りなす味覚を存分にご賞味ください。</p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <amp-story-page id="page-4">
+        <amp-story-grid-layer template="fill">
+          <amp-img src="https://p1-e6eeae93.imageflux.jp/c!/a=2,w=940,h=400/ebiyashop/428b22b1cf07b2fb981a.jpeg"
+                   width="720" height="1280"
+                   layout="responsive">
+          </amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical">
+          <h1 style="color: #14274e">三重の食品・雑貨の販売を始めました</h1>
+          <p style="color: #f1f6f9">新型コロナウイルスの影響で家に居る時間が多くなる今、美味しい食品や素敵な雑貨で少しでも皆様に楽しんで頂けるように、また観光客の減少によって痛手を受けている三重県の事業者様の手助けに少しでもなればと思い、三重の美味しい食品と雑貨の販売も始めました。</p>
+        </amp-story-grid-layer>
+        <amp-story-page-attachment layout="nodisplay" href="https://ebiyashop.stores.jp/">
+        </amp-story-page-attachment>
+      </amp-story-page>
+
+      <amp-story-page id="page-5">
+        <amp-story-grid-layer template="fill">
+          <amp-img src="https://kinarino.k-img.com/system/press_images/001/350/809/cea1b738186e74368e8a29f71184f00fdec3caf8.jpg?1544953340"
+                   width="720" height="1280"
+                   layout="responsive">
+          </amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical">
+          <h1>伊勢神宮周辺の人気観光スポット</h1>
+          <p>伊勢をごゆっくりご堪能くださいませ</p>
+        </amp-story-grid-layer>
+        <amp-story-page-attachment layout="nodisplay" href="https://www.jalan.net/kankou/cit_242030000/">
+        </amp-story-page-attachment>
+      </amp-story-page>
+
+    </amp-story>
+  </body>
+</html>
